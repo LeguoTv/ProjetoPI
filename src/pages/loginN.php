@@ -47,7 +47,7 @@
 
         <div class="senha-link">
           <a href="../../public/paginicial.php" class=""
-            >Voltar Para pagina Inicial</a
+            >Voltar a pagina Inicial.</a
           >
 
           <a href="pasta%20Dos%20HTML/servicos.html">esqueceu a senha?</a>

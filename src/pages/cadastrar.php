@@ -70,7 +70,7 @@
        <label for="endereco" class="labelInput">Endereço</label>
        </div>
       <input type="submit" name="submit" id="submit" value="Cadastrar">
-      <a href="login.php" id="VolTar">Já tem conta? Voltar</a>
+      <a href="loginN.php" id="VolTar">Já tem conta? Voltar</a>
     </fieldset>
   </form>
 </div>
