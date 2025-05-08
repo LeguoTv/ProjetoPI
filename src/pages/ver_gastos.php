@@ -163,7 +163,17 @@ $margem = $lucroTotal > 0 ? number_format(($lucroLiquido / $lucroTotal) * 100, 1
 
     <span class="bem-vindo">Bem-vindo, <?php echo htmlspecialchars($nome); ?>!</span>
 
+<!-- Modal para exibir descrição completa -->
+<div id="modalDescricao" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background-color: rgba(0,0,0,0.5); align-items:center; justify-content:center; z-index:1000;">
+  <div style="background:#fff; padding:20px; max-width:600px; max-height:80vh; overflow-y:auto; border-radius:8px; position:relative;">
+    <span id="fecharModalDescricao" style="position:absolute; top:10px; right:15px; cursor:pointer; font-weight:bold; font-size:20px;">&times;</span>
+    <p id="textoModalDescricao"></p>
+  </div>
+</div>
+
+<!-- Tabela --> 
 <div class="table-container">
+  <div class="table-responsive">   
   
   <?php if (isset($_GET['success'])) echo "<p style='color: green;'>".htmlspecialchars($_GET['success'])."</p>"; ?>
   <?php if (isset($_GET['error'])) echo "<p style='color: red;'>".htmlspecialchars($_GET['error'])."</p>"; ?>
@@ -181,29 +191,32 @@ $margem = $lucroTotal > 0 ? number_format(($lucroLiquido / $lucroTotal) * 100, 1
         </tr>
       </thead>
       <tbody>
-        <?php foreach ($Produto as $row): ?>
-          <tr>
-            <td><?= htmlspecialchars($row['Produto']) ?></td>
-            <td><?= date('d/m/Y', strtotime($row['data_gasto'])) ?></td>
-            <td>R$ <?= number_format($row['preco'], 2, ',', '.') ?></td>
-            <td><?= htmlspecialchars($row['categoria']) ?></td>
-            <td><?= htmlspecialchars($row['Tipo']) ?></td>
-            <td><?= htmlspecialchars($row['descricao']) ?></td>
-            <td>
-  <a class="botao-editar" href="editar_gasto.php?id=<?php echo $row['id']; ?>">
-    <i class="bi bi-pencil-fill"></i> Editar
-  </a>
-  <a class="botao-excluir" href="ver_gastos.php?delete_id=<?php echo $row['id']; ?>" onclick="return confirm('Tem certeza que deseja excluir este gasto?');">
-    <i class="bi bi-trash-fill"></i> Excluir
-  </a>
-</td>
-          </tr>
-        <?php endforeach; ?>
-      </tbody>
+  <?php foreach ($Produto as $row): ?>
+    <tr>
+      <td data-label><?= htmlspecialchars($row['Produto']) ?></td>
+      <td data-label><?= date('d/m/Y', strtotime($row['data_gasto'])) ?></td>
+      <td data-label>R$ <?= number_format($row['preco'], 2, ',', '.') ?></td>
+      <td data-label><?= htmlspecialchars($row['categoria']) ?></td>
+      <td data-label><?= htmlspecialchars($row['Tipo']) ?></td>
+      <td data-label>
+        <p class="descricao"><?= htmlspecialchars($row['descricao']) ?></p>
+      </td>
+      <td>
+        <a class="botao-editar" href="editar_gasto.php?id=<?php echo $row['id']; ?>">
+          <i class="bi bi-pencil-fill"></i> Editar
+        </a>
+        <a class="botao-excluir" href="ver_gastos.php?delete_id=<?php echo $row['id']; ?>" onclick="return confirm('Tem certeza que deseja excluir este gasto?');">
+          <i class="bi bi-trash-fill"></i> Excluir
+        </a>
+      </td>
+    </tr>
+  <?php endforeach; ?>
+</tbody>
     </table>
   <?php else: ?>
     <p>Você ainda não adicionou nenhum gasto.</p>
   <?php endif; ?>
+</div>
 </div>
   <!------------------------->
 
@@ -237,18 +250,15 @@ $margem = $lucroTotal > 0 ? number_format(($lucroLiquido / $lucroTotal) * 100, 1
   <h2 style="text-align: center;">Gráficos Financeiros</h2>
   <div class="linha-e-coluna">
     <div class="grafico">
-      <h4>Lucros e Despesas Mensais</h4>
-      <canvas id="graficoColuna1" width="600" height="300"></canvas>
+      <canvas id="graficoColuna1" width="800" height="600"></canvas>
     </div>
 
     <div class="grafico">
-      <h4>Gastos por Dia</h4>
-      <canvas id="graficoColuna"></canvas>
+      <canvas id="graficoColuna" width="800" height="600"></canvas>
     </div>
   </div>
  
     <div class="grafico" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
-      <h4>Distribuição por Categoria (Pizza)</h4>
       <canvas id="graficoCategoria" width="300" height="300"></canvas>
   </div>
 
@@ -362,6 +372,43 @@ new Chart(ctxMensais, {
   }
 }
 </script>
+
+<!-- script ver mais -->
+
+<script>
+  document.querySelectorAll('.descricao').forEach(function (el) {
+    const textoCompleto = el.textContent.trim();
+    const limite = 20;
+
+    if (textoCompleto.length > limite) {
+      const textoVisivel = textoCompleto.slice(0, limite);
+      el.innerHTML = `
+        ${textoVisivel}<span class="pontos">...</span>
+        <span class="toggle-ler-mais" style="color:#007bff; cursor:pointer;"> ler mais</span>
+      `;
+
+      el.querySelector('.toggle-ler-mais').addEventListener('click', function () {
+        document.getElementById('textoModalDescricao').textContent = textoCompleto;
+        document.getElementById('modalDescricao').style.display = 'flex';
+      });
+    }
+  });
+
+  // Fechar modal
+  document.getElementById('fecharModalDescricao').addEventListener('click', function () {
+    document.getElementById('modalDescricao').style.display = 'none';
+  });
+
+  // Fechar ao clicar fora do conteúdo
+  window.addEventListener('click', function (e) {
+    const modal = document.getElementById('modalDescricao');
+    if (e.target === modal) {
+      modal.style.display = 'none';
+    }
+  });
+</script>
+
+
 <script src="/projetopi/src/JS/nav.js"></script>
 </body>
 </html>
