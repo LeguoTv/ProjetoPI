@@ -22,7 +22,6 @@ Se você estiver usando margens negativas, width: 100vw,
 
 /*Estilização do reader*/
 
-
 /*Abaixo a estilização do Bem-Vindo*/
 
 .BemVindo {
@@ -37,6 +36,7 @@ Se você estiver usando margens negativas, width: 100vw,
   font-weight: bold;
 }
 .BemVindo p {
+  padding: 20px;
   font-size: 20px;
 }
 

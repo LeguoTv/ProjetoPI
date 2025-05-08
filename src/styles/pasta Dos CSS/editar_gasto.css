@@ -194,6 +194,38 @@ input[type="submit"]:hover {
   ); /* Inverte as cores no hover para um efeito visual */
 }
 
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 600;
+  color: #333;
+}
+
+select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  font-size: 1rem;
+  color: #333;
+  transition: border-color 0.3s ease;
+}
+
+select:focus {
+  border-color: #1f3b99;
+  outline: none;
+  background-color: #fff;
+}
+
+br {
+  display: none; /* Para limpar espaçamento caso você esteja usando margens/padding */
+}
+
+.select-group {
+  margin-bottom: 20px;
+}
+
 /* Responsividade: para telas pequenas */
 @media (max-width: 435px) {
   .container {

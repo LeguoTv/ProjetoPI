@@ -225,3 +225,10 @@ header {
   border: 1px solid #f87171;
 }
 
+/* expansividade */
+
+@media (max-width: 1068px) {
+  #p {
+    display: none;
+  }
+}

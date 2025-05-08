@@ -85,6 +85,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <label for="preco">Preço:</label>
     <input type="number" step="0.01" name="preco" id="preco" value="<?php echo htmlspecialchars($Produto['preco']); ?>" required>
 
+    <div class="select-group">
     <label for="categoria">Categoria:</label>
     <select name="categoria" id="categoria" required>
         <option value="Alimentação" <?php echo $Produto['categoria'] === 'Alimentação' ? 'selected' : ''; ?>>Alimentação</option>
@@ -94,12 +95,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <option value="Educação" <?php echo $Produto['categoria'] === 'Educação' ? 'selected' : ''; ?>>Educação</option>
         <option value="Outros" <?php echo $Produto['categoria'] === 'Outros' ? 'selected' : ''; ?>>Outros</option>
     </select>
-<br><br>
+</div>
+
+<div class="select-group">
     <label for="tipo">Tipo:</label>
     <select name="tipo" id="tipo" required>
         <option value="Lucro" <?php echo $Produto['Tipo'] === 'Lucro' ? 'selected' : ''; ?>>Lucro</option>
         <option value="Dívida" <?php echo $Produto['Tipo'] === 'Dívida' ? 'selected' : ''; ?>>Dívida</option>
     </select>
+</div>
+
 <br><br>
     <label for="descricao">Descrição:</label>
     <textarea name="descricao" id="descricao" rows="3"><?php echo htmlspecialchars($Produto['descricao']); ?></textarea>
