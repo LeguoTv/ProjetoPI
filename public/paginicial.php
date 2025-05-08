@@ -53,10 +53,10 @@ $conn->close();
 
 </head>
 <body>
-<!-- <div id="preloader">
+ <div id="preloader">
   <img id="image1" src="../src/assets/Imagens do Site/Padrão vertical - ByAvanced (1).png" alt="Logo 1">
   
-</div> -->
+</div> 
 
 
     <!-- Cabeçalho -->
@@ -223,16 +223,27 @@ $conn->close();
     const image1 = document.getElementById("image1");
     const preloader = document.getElementById("preloader");
 
-    // Mostrar a imagem e aplicar a animação
-    image1.classList.add("mostrar");
+    // Verifica se o preloader já foi mostrado nesta sessão
+    const preloaderShown = sessionStorage.getItem("preloaderShown");
 
-    // Após 3 segundos, esconder o preloader e mostrar o site
-    setTimeout(() => {
-      preloader.style.opacity = '0';
-      setTimeout(() => preloader.style.display = 'none', 500);
-    }, 3000); // Duração ajustada para o tempo do preloader
+    if (!preloaderShown) {
+      // Mostra o preloader normalmente
+      image1.classList.add("mostrar");
+
+      setTimeout(() => {
+        preloader.style.opacity = '0';
+        setTimeout(() => preloader.style.display = 'none', 500);
+      }, 3000);
+
+      // Marca como mostrado
+      sessionStorage.setItem("preloaderShown", "true");
+    } else {
+      // Oculta imediatamente se já foi mostrado
+      preloader.style.display = 'none';
+    }
   });
 </script>
+
 
 
 <script src="/projetopi/src/JS/nav.js"></script>

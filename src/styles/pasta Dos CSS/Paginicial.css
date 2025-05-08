@@ -34,7 +34,6 @@ Se você estiver usando margens negativas, width: 100vw,
     isso pode causar o problema. A solução acima já previne,
 */
 
-
 /* Estili do Comteudo do futuro da sua liberdade....*/
 
 .hero-section {
@@ -460,7 +459,7 @@ h1 span {
 }
 
 #preloader img {
-  width: 600px; /* Tamanho aumentado para 300px de largura */
+  width: 600px; /* Tamanho aumentado para 600px de largura */
   height: auto; /* Mantém a proporção da imagem */
   opacity: 0;
   transition: opacity 1s ease;
