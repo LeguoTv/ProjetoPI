@@ -210,7 +210,7 @@ $conn->close();
 </script>
 
 
-
+<script src="/projetopi/src/JS/footer.js" defer></script>
 <script src="/projetopi/src/JS/nav.js"></script>
 </body>
 </html>

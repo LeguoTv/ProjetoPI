@@ -70,7 +70,7 @@ $nome = $stmt->fetchColumn() ?: "Usuário Desconhecido";
     </div>
   </div>
 
-
+    <script src="/projetopi/src/JS/footer.js" defer></script>
     <script src="../../JS/FunçõesDoChatBot.js"></script>
     <script src="/projetopi/src/JS/nav.js"></script>
   </body>
