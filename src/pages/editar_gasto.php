@@ -69,7 +69,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </head>
 <body>
 
-<div id="navbar-container"></div>
 
 
 <main class="main-content">
@@ -125,7 +124,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     body.classList.toggle('menu-ativo');
   });
 </script>
-<script src="/projetopi/src/JS/nav.js"></script>
 </body>
 </html>
 

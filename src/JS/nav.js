@@ -91,11 +91,11 @@ document.addEventListener("DOMContentLoaded", function() {
                 'adicionar_gasto.php',
                 'servicos.php'
             ].includes(currentPage);
-
-            // Limpa e recria links
+        
+            // Limpa conteúdo
             mobileMenu.innerHTML = '';
-            
-            // Adiciona links relevantes
+        
+            // Clona links
             const linksContainer = document.createElement('ul');
             const linksToShow = document.querySelectorAll(isLoggedPage ? '.nav-links .logged-link' : '.nav-links .guest-link');
             
@@ -106,14 +106,25 @@ document.addEventListener("DOMContentLoaded", function() {
                 linksContainer.appendChild(clonedLink);
             });
             mobileMenu.appendChild(linksContainer);
-
-            // Adiciona botão
-            const btn = document.querySelector('.login .btn').cloneNode(true);
-            btn.style.display = 'block';
-            btn.style.margin = '15px 25px';
-            btn.style.width = 'calc(100% - 50px)';
-            mobileMenu.appendChild(btn);
+        
+            // Cria a área dos botões
+            const loginContainer = document.createElement('div');
+            loginContainer.classList.add('mobile-login');
+        
+            // Clona botão apropriado
+            const btnSelector = isLoggedPage ? '.login .logged-link' : '.login .guest-link';
+            const btn = document.querySelector(btnSelector)?.cloneNode(true);
+        
+            if (btn) {
+                btn.style.display = 'block';
+                btn.style.margin = '15px 25px';
+                btn.style.width = 'calc(100% - 50px)';
+                loginContainer.appendChild(btn);
+            }
+        
+            mobileMenu.appendChild(loginContainer);
         }
+        
     }
 
     // 5. Destaca link ativo
