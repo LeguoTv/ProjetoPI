@@ -78,10 +78,10 @@ if (isset($_POST['exportar_excel'])) {
     header("Expires: 0");
 
     echo "<table border='1'>";
-    echo "<tr><th>ID user</th><th>Nome do Produto</th><th>Data</th><th>Preço (R$)</th><th>Categoria</th><th>Tipo</th><th>Descrição</th></tr>";
+    echo "<tr><th>Nome do Produto</th><th>Data</th><th>Preço (R$)</th><th>Categoria</th><th>Tipo</th><th>Descrição</th></tr>";
     foreach ($produtos as $produto) {
         echo "<tr>";
-        echo "<td>{$produto['user_id']}</td>";
+       
         echo "<td>" . htmlspecialchars($produto['Produto']) . "</td>";
         echo "<td>" . date('d/m/Y', strtotime($produto['data_gasto'])) . "</td>";
         echo "<td>{$produto['preco']}</td>";
