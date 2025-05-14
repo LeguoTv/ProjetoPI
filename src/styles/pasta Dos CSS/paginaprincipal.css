@@ -94,16 +94,23 @@ o código todo começando do BODY, e ja são 00:35 e eu to morto de fome */
 
 /* Cabeçalho fixo */
 .ChatIA {
-  background-color: #142675;
-  height: 5rem;
-  width: 5rem;
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50%;
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  z-index: 9999;
   cursor: pointer;
-  transition: opacity 0.5s ease; /* Transição para ocultar */
+}
+.bot-imagem {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.bot-imagem:hover {
+  transform: scale(1.05);
 }
 
 /* Quando o chat estiver aberto, escondemos a bolinha */

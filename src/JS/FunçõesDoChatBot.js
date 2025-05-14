@@ -1,17 +1,11 @@
-// Botão de expandir/recolher o chat
-const botao = document.querySelector(".AtivarDesativarChat");
+const botao = document.querySelector(".bot-imagem");
 const expansao = document.querySelector(".chatExpandido");
 const chatWrapper = document.querySelector(".ChatWrapper");
 const chatIA = document.querySelector(".ChatIA");
 
-// Toggle de expandir/recolher o chat
 botao.addEventListener("click", () => {
   const estaAberto = expansao.style.height === "31rem";
-  
-  // Alterna entre abrir e fechar o chat
   expansao.style.height = estaAberto ? "0" : "31rem";
-  
-  // Adiciona ou remove a classe 'aberto' para controlar a visibilidade da bolinha
   if (!estaAberto) {
     expansao.classList.add("aberto");
   } else {
@@ -21,12 +15,12 @@ botao.addEventListener("click", () => {
 
 // Fechar o chat ao clicar fora do wrapper
 document.addEventListener("click", (e) => {
-  if (!chatWrapper.contains(e.target)) {  // Verifica se o clique foi fora do chat
+  if (!chatWrapper.contains(e.target)) {
+    // Verifica se o clique foi fora do chat
     expansao.style.height = "0"; // Fecha o chat
-    expansao.classList.remove("aberto");  // Remove a classe que esconde a bolinha
+    expansao.classList.remove("aberto"); // Remove a classe que esconde a bolinha
   }
 });
-
 
 // Chat: envio de mensagens
 const form = document.getElementById("chat-form");
@@ -52,7 +46,6 @@ form.addEventListener("submit", async (e) => {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ message, sessionId: "default" }), // pode usar um UUID depois
-
     });
 
     // Converte a resposta para JSON
@@ -72,7 +65,6 @@ form.addEventListener("submit", async (e) => {
   }
 });
 
-
 function appendMessage(role, text) {
   // Cria uma nova div que vai conter a mensagem tlg
   const div = document.createElement("div");
@@ -86,9 +78,9 @@ function appendMessage(role, text) {
   chatbox.scrollTop = chatbox.scrollHeight;
 }
 
-
-function formatMessage(text) { // Em relação a bugs de formatação de texto
+function formatMessage(text) {
+  // Em relação a bugs de formatação de texto
   return text
-    .replace(/\n/g, "<br>")               // quebra de linha
+    .replace(/\n/g, "<br>") // quebra de linha
     .replace(/\*\*(.*?)\*\*/g, "<b>$1</b>"); // negrito com **
 }

@@ -64,9 +64,8 @@ $nome = $stmt->fetchColumn() ?: "Usuário Desconhecido";
       </div>
   
       <div class="ChatIA">
-        <button class="AtivarDesativarChat"></button>
-        <!-- botão de maximizar e minimizar o menu -->
-      </div>
+  <img src="https://static.vecteezy.com/system/resources/previews/007/225/199/non_2x/robot-chat-bot-concept-illustration-vector.jpg" alt="Abrir Chat Bot" class="bot-imagem" />
+</div>
     </div>
   </div>
 
