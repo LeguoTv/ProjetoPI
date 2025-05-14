@@ -38,7 +38,7 @@
     <fieldset>
       <div class="inputBox">
         <input type="text" name="nome" class="inputUser" required>
-        <label for="nome" class="labelInput">Nome completo</label>
+        <label for="nome" class="labelInput">Nome do Usuário</label>
       </div>
       <div class="inputBox">
         <input type="email" name="email" class="inputUser" required>

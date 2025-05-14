@@ -54,7 +54,7 @@
 
         <a href="cadastrar.php" class="sem-conta">Não possui cadastro?</a>
 
-        <button type="submit" class="btn-cadastrar">CADASTRE-SE</button>
+        <button type="submit" class="btn-cadastrar">FAZER LOGIN</button>
       </form>
     </div>
   </body>
