@@ -8,11 +8,10 @@
   </head>
   <body>
   <div class="login-container">
-      <img
-        src="https://static.vecteezy.com/ti/fotos-gratis/t2/23701963-selvagem-leopardo-animal-ilustracao-ai-generativo-gratis-foto.jpg"
-        alt="Logo Auctus Fynance"
-        class="logo"
-      />
+      <img src="/ProjetoPI/src/assets/Imagens%20do%20Site/Conteudo%20do%20site/Logo%20Branca.png" 
+            alt="Logo" 
+            class="logo" 
+            loading="lazy">
       <h2 class="slogan">
         O FUTURO DA SUA LIBERDADE <br /><span>FINANCEIRA</span>
       </h2>
@@ -46,11 +45,11 @@
         />
 
         <div class="senha-link">
-          <a href="../../public/paginicial.php" class=""
-            >Voltar a pagina Inicial.</a
+          <a href="../../public/paginicial.php" class="Pag-Inicial"
+            >Pagina Inicial.</a
           >
 
-          <a href="pasta%20Dos%20HTML/servicos.html">esqueceu a senha?</a>
+          <a href="pasta%20Dos%20HTML/servicos.html" class="Esq-Senha">Esqueceu a senha?</a>
         </div>
 
         <a href="cadastrar.php" class="sem-conta">Não possui cadastro?</a>

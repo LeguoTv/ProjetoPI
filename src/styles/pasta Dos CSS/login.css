@@ -24,8 +24,8 @@ body {
 }
 
 .logo {
-  width: 150px;
-  margin-bottom: 1rem;
+  width: 23rem;
+  margin-bottom: 4rem;
 }
 
 .slogan {
@@ -70,6 +70,7 @@ body {
 }
 
 .senha-link {
+  display: flex;
   text-align: left;
   margin-bottom: 1rem;
 }
@@ -79,6 +80,10 @@ body {
   color: white;
   text-decoration: none;
   padding-left: 25px;
+}
+
+.Esq-Senha{
+  margin-left: 20%;
 }
 
 .sem-conta {
