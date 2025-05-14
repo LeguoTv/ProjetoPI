@@ -58,11 +58,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->bind_param("ssssssss", $nome, $email, $senha_hash, $data_NSC, $telefone, $cidade, $estado, $endereco);
 
     if ($stmt->execute()) {
-        header("Location: cadastrar.php?success=Usuário cadastrado com sucesso! Faça o login.");
-    } else {
-        header("Location: cadastrar.php?error=Erro ao cadastrar usuário.");
-    }
-
+    $_SESSION['success'] = "Usuário cadastrado com sucesso!";
+} else {
+    $_SESSION['error'] = "Erro ao cadastrar usuário.";
+}
+header("Location: cadastrar.php");
+exit();
     $stmt->close();
 }
 

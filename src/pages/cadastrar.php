@@ -23,16 +23,18 @@
   <h2>Faça Seu Cadastro</h2>
 
   <div class="messages">
-    <!-- Mensagens de erro ou sucesso aparecerão aqui -->
-    <?php
-  if (isset($_GET['error'])) {
-      echo "<div class='error'>" . htmlspecialchars($_GET['error']) . "</div>";
+  <?php
+  session_start();
+  if (isset($_SESSION['success'])) {
+      echo "<div class='success'>" . $_SESSION['success'] . "</div>";
+      unset($_SESSION['success']);
   }
-  if (isset($_GET['success'])) {
-      echo "<div class='success'>" . htmlspecialchars($_GET['success']) . "</div>";
+  if (isset($_SESSION['error'])) {
+      echo "<div class='error'>" . $_SESSION['error'] . "</div>";
+      unset($_SESSION['error']);
   }
   ?>
-                </div>
+</div>
 
   <form action="cadastro.php" method="POST">
     <fieldset>
@@ -92,6 +94,16 @@
   });
 </script>
 
+<script>
+  setTimeout(() => {
+    const alertBox = document.querySelector(".success, .error");
+    if (alertBox) {
+      alertBox.style.transition = "opacity 0.5s ease-out";
+      alertBox.style.opacity = "0";
+      setTimeout(() => alertBox.remove(), 500);
+    }
+  }, 4000);
+</script>
 
 
 <script src="/projetopi/src/JS/nav.js"></script>
