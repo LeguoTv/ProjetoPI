@@ -49,11 +49,15 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $stmt = $conn->prepare("INSERT INTO gastos (user_id, Produto, data_gasto, preco, categoria, tipo, descricao) VALUES (?, ?, ?, ?, ?, ?, ?)");
     $stmt->bind_param("issdsss", $user_id, $Produto, $data_gasto, $preco, $categoria, $tipo, $descricao);
 
-    if ($stmt->execute()) {
-        header("Location: adicionar_gasto.php?success=Gasto adicionado com sucesso!");
-    } else {
-        header("Location: adicionar_gasto.php?error=Erro ao adicionar o gasto. Verifique os dados.");
-    }
+     if ($stmt->execute()) {
+    $_SESSION['success'] = "Gasto adicionado com sucesso!";
+} else {
+    $_SESSION['error'] = "Erro ao adicionar o gasto. Verifique os dados.";
+}
+header("Location: adicionar_gasto.php");
+exit();
+
+
 
     $stmt->close();
     $check_user->close(); // fecha a verificação do usuário também
@@ -81,14 +85,19 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
   <div class="form-wrapper">
     <form action="adicionar_gasto.php" method="post">
 
-      <?php
-      if (isset($_GET['success'])) {
-          echo "<p class='mensagem sucesso'>" . htmlspecialchars($_GET['success']) . "</p>";
-      }
-      if (isset($_GET['error'])) {
-          echo "<p class='mensagem erro'>" . htmlspecialchars($_GET['error']) . "</p>";
-      }
-      ?>
+      <div class="messages">
+  <?php
+  
+  if (isset($_SESSION['success'])) {
+      echo "<div class='success'>" . $_SESSION['success'] . "</div>";
+      unset($_SESSION['success']);
+  }
+  if (isset($_SESSION['error'])) {
+      echo "<div class='error'>" . $_SESSION['error'] . "</div>";
+      unset($_SESSION['error']);
+  }
+  ?>
+</div>
 
       <label for="gasto">Nome do Produto:</label>
       <input type="text" step="0.01" name="Produto" id="Produto" required>
@@ -125,6 +134,18 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <p id="p">Preste atenção na hora<br>de organizar seus<br>gastos!</p>
   </div>
 </div>
+
+<script>
+  setTimeout(() => {
+    const alertBox = document.querySelector(".success, .error");
+    if (alertBox) {
+      alertBox.style.transition = "opacity 0.5s ease-out";
+      alertBox.style.opacity = "0";
+      setTimeout(() => alertBox.remove(), 500);
+    }
+  }, 4000);
+</script>
+
 <script src="/projetopi/src/JS/nav.js"></script>
 </body>
 </html>

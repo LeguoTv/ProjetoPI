@@ -204,31 +204,43 @@ header {
   display: block; /* Garante a quebra de linha */
 }
 
-/* Mensagens */
-.mensagem {
-  font-size: 1rem;
-  padding: 10px;
-  border-radius: 6px;
-  margin-bottom: 10px;
-  text-align: center;
-}
-
-.sucesso {
-  background-color: #d1fae5;
-  color: #065f46;
-  border: 1px solid #34d399;
-}
-
-.erro {
-  background-color: #fee2e2;
-  color: #991b1b;
-  border: 1px solid #f87171;
-}
-
 /* expansividade */
 
 @media (max-width: 1068px) {
   #p {
     display: none;
+  }
+}
+
+/* estilo da mensagem */
+.success,
+.error {
+  padding: 15px 20px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  font-weight: bold;
+  color: #fff;
+  animation: fadeIn 0.5s ease-in-out;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.success {
+  background-color: #4caf50; /* Verde */
+  border-left: 6px solid #2e7d32;
+}
+
+.error {
+  background-color: #f44336; /* Vermelho */
+  border-left: 6px solid #b71c1c;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
   }
 }

@@ -49,11 +49,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Atualizando os dados no banco
     $stmt = $conn->prepare("UPDATE gastos SET Produto = ?, data_gasto = ?, preco = ?, categoria = ?, tipo = ?, descricao = ? WHERE id = ? AND user_id = ?");
     $stmt->bind_param("ssdsssii", $novo_Produto, $nova_data, $novo_preco, $nova_categoria, $novo_tipo, $nova_descricao, $Produto_id, $user_id);
+    
+
     if ($stmt->execute()) {
-        header("Location: ver_gastos.php?success=Gasto atualizado com sucesso.");
-    } else {
-        header("Location: editar_gasto.php?id=$Produto_id&error=Erro ao atualizar gasto.");
-    }
+    $_SESSION['success'] = "Gasto atualizado com sucesso.";
+} else {
+    $_SESSION['error'] = "Erro ao atualizar gasto.";
+}
+header("Location: ver_gastos.php");
     exit();
 }
 ?>

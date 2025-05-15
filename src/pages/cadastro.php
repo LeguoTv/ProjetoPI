@@ -30,10 +30,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $endereco = trim($_POST['endereco']);
 
     // Validar e-mail
+
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        header("Location: cadastrar.php?error=E-mail inválido.");
-        exit();
-    }
+    $_SESSION['error'] = "E-mail inválido.";
+    header("Location: cadastrar.php");
+    exit();
+}
 
     // Verificar se o e-mail já está cadastrado usando prepared statements
     $stmt = $conn->prepare("SELECT id FROM usuarios WHERE email = ?");
@@ -43,7 +45,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($stmt->num_rows > 0) {
         // E-mail já cadastrado
-        header("Location: cadastrar.php?error=Este e-mail já está cadastrado.");
+        $_SESSION['error'] = "Este e-mail já está cadastrado.";
+header("Location: cadastrar.php");
         $stmt->close();
         $conn->close();
         exit();

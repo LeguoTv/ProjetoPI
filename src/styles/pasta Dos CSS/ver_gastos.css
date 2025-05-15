@@ -117,7 +117,7 @@ header {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0,0,0,0.5);
+  background-color: rgba(0, 0, 0, 0.5);
   justify-content: center;
   align-items: center;
   z-index: 1000;
@@ -161,8 +161,6 @@ header {
     font-size: 18px;
   }
 }
-
-
 
 /* Estilização da tabela abaixo!!*/
 
@@ -243,7 +241,7 @@ p {
   font-size: 1rem;
 }
 
-.descricao{
+.descricao {
   color: black;
 }
 
@@ -261,13 +259,12 @@ td .botao-excluir {
   white-space: nowrap; /* Evita quebra de texto */
 }
 
-
 @media screen and (max-width: 600px) {
   td .botao-editar,
   td .botao-excluir {
-    display: block;          /* Empilha os botões verticalmente */
-    width: 100%;             /* Ocupa toda a largura da célula */
-    font-size: 12px;         /* Fonte menor */
+    display: block; /* Empilha os botões verticalmente */
+    width: 100%; /* Ocupa toda a largura da célula */
+    font-size: 12px; /* Fonte menor */
     padding: 6px;
     margin: 4px 0;
   }
@@ -288,12 +285,12 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  overflow-x: hidden;  /* Impede o scroll horizontal global */
+  overflow-x: hidden; /* Impede o scroll horizontal global */
 }
 
 .table-container {
   overflow-x: auto;
-  padding: 0 10px;  /* Ajusta o padding do contêiner da tabela */
+  padding: 0 10px; /* Ajusta o padding do contêiner da tabela */
 }
 
 table {
@@ -302,11 +299,12 @@ table {
   min-width: 600px;
 }
 
-th, td {
+th,
+td {
   border: none;
-  padding: 8px;  /* Diminuir o padding para células mais compactas */
+  padding: 8px; /* Diminuir o padding para células mais compactas */
   text-align: left;
-  font-size: 14px;  /* Reduzir o tamanho da fonte */
+  font-size: 14px; /* Reduzir o tamanho da fonte */
 }
 
 th {
@@ -315,18 +313,18 @@ th {
 
 @media screen and (max-width: 600px) {
   table {
-    font-size: 12px;  /* Reduz o tamanho da fonte para telas pequenas */
+    font-size: 12px; /* Reduz o tamanho da fonte para telas pequenas */
   }
 
-  th, td {
-    padding: 6px;  /* Menos padding nas células em telas pequenas */
+  th,
+  td {
+    padding: 6px; /* Menos padding nas células em telas pequenas */
   }
 
   .table-container {
-    padding: 0 10px;  /* Ajuste o padding do contêiner da tabela */
+    padding: 0 10px; /* Ajuste o padding do contêiner da tabela */
   }
 }
-
 
 /* Estilização dos botão para baixar Exel e de mostrar o dashboard*/
 
@@ -419,7 +417,6 @@ th {
   box-sizing: border-box;
 }
 
-
 /* Botão de mostrar dashboard */
 .btnn {
   display: block;
@@ -476,7 +473,8 @@ th {
   margin: 10px 0;
 }
 
-.cards, .linha-e-coluna {
+.cards,
+.linha-e-coluna {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
@@ -484,7 +482,6 @@ th {
   gap: 20px;
   box-sizing: border-box;
 }
-
 
 /* Seções de gráficos */
 .linha-e-coluna,
@@ -520,4 +517,37 @@ th {
 #graficoCategoria {
   max-width: 300px; /* Limita a largura máxima */
   max-height: 300px; /* Limita a altura máxima */
+}
+
+/* estilo da mensagem */
+.success,
+.error {
+  padding: 15px 20px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  font-weight: bold;
+  color: #fff;
+  animation: fadeIn 1s ease-in-out;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.success {
+  background-color: #4caf50; /* Verde */
+  border-left: 6px solid #2e7d32;
+}
+
+.error {
+  background-color: #f44336; /* Vermelho */
+  border-left: 6px solid #b71c1c;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }

@@ -175,8 +175,21 @@ $margem = $lucroTotal > 0 ? number_format(($lucroLiquido / $lucroTotal) * 100, 1
 <div class="table-container">
   <div class="table-responsive">   
   
-  <?php if (isset($_GET['success'])) echo "<p style='color: green;'>".htmlspecialchars($_GET['success'])."</p>"; ?>
-  <?php if (isset($_GET['error'])) echo "<p style='color: red;'>".htmlspecialchars($_GET['error'])."</p>"; ?>
+  <div class="messages">
+  <?php
+  
+  if (isset($_SESSION['success'])) {
+      echo "<div class='success'>" . $_SESSION['success'] . "</div>";
+      unset($_SESSION['success']);
+  }
+  if (isset($_SESSION['error'])) {
+      echo "<div class='error'>" . $_SESSION['error'] . "</div>";
+      unset($_SESSION['error']);
+  }
+  
+
+  ?>
+</div>
    <?php if ($result->num_rows > 0): ?>
     <table>
       <thead>
@@ -408,6 +421,16 @@ new Chart(ctxMensais, {
   });
 </script>
 
+<script>
+  setTimeout(() => {
+    const alertBox = document.querySelector(".success, .error");
+    if (alertBox) {
+      alertBox.style.transition = "opacity 0.5s ease-out";
+      alertBox.style.opacity = "0";
+      setTimeout(() => alertBox.remove(), 500);
+    }
+  }, 4000);
+</script>
 
 <script src="/projetopi/src/JS/nav.js"></script>
 </body>

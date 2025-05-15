@@ -33,6 +33,8 @@
       echo "<div class='error'>" . $_SESSION['error'] . "</div>";
       unset($_SESSION['error']);
   }
+  
+
   ?>
 </div>
 
