@@ -43,7 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $nova_data = $_POST['data_gasto'];
     $novo_preco = $_POST['preco'];
     $nova_categoria = $_POST['categoria'];
-    $novo_tipo = $_POST['tipo']; // Novo campo
+    $novo_tipo = $_POST['Tipo']; // Novo campo
     $nova_descricao = $_POST['descricao'];
 
     // Atualizando os dados no banco
@@ -99,8 +99,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <div class="select-group">
     <label for="tipo">Tipo:</label>
     <select name="tipo" id="tipo" required>
-        <option value="Lucro" <?php echo $Produto['Tipo'] === 'Lucro' ? 'selected' : ''; ?>>Lucro</option>
-        <option value="Dívida" <?php echo $Produto['Tipo'] === 'Dívida' ? 'selected' : ''; ?>>Dívida</option>
+        <option value="lucro" <?php echo $Produto['Tipo'] === 'lucro' ? 'selected' : ''; ?>>Lucro</option>
+        <option value="divida" <?php echo $Produto['Tipo'] === 'divida' ? 'selected' : ''; ?>>Dívida</option>
     </select>
 </div>
 

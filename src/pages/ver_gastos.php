@@ -193,7 +193,7 @@ $margem = $lucroTotal > 0 ? number_format(($lucroLiquido / $lucroTotal) * 100, 1
       <tbody>
   <?php foreach ($Produto as $row): ?>
     <tr>
-      <td data-label><?= htmlspecialchars($row['Produto']) ?></td>
+      <td data-label><p class="descricao"><?= htmlspecialchars($row['Produto']) ?></p></td>
       <td data-label><?= date('d/m/Y', strtotime($row['data_gasto'])) ?></td>
       <td data-label>R$ <?= number_format($row['preco'], 2, ',', '.') ?></td>
       <td data-label><?= htmlspecialchars($row['categoria']) ?></td>
@@ -267,7 +267,7 @@ $margem = $lucroTotal > 0 ? number_format(($lucroLiquido / $lucroTotal) * 100, 1
 </div>
 
 <script>
-const datas = <?= json_encode(array_map(fn($r) => $r['Produto'] . ' (' . date('d/m/Y', strtotime($r['data_gasto'])) . ')', $Produto)) ?>;
+const datas = <?= json_encode(array_map(fn($r) => date('d/m/Y', strtotime($r['data_gasto'])), $Produto)) ?>;
 const valores = <?= json_encode(array_map(fn($r) => $r['preco'], $Produto)) ?>;
 
 const labelsLinha = <?= json_encode(array_keys($porMes)) ?>;
