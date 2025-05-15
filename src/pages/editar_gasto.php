@@ -43,7 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $nova_data = $_POST['data_gasto'];
     $novo_preco = $_POST['preco'];
     $nova_categoria = $_POST['categoria'];
-    $novo_tipo = $_POST['Tipo']; // Novo campo
+    $novo_tipo = $_POST['tipo']; // Novo campo
     $nova_descricao = $_POST['descricao'];
 
     // Atualizando os dados no banco
