@@ -45,7 +45,7 @@ $nome = $stmt->fetchColumn() ?: "Usuário Desconhecido";
     <div class="imagem-container">
       <img src="../../assets/Imagens do Site/Captura de tela 2025-04-14 092901.png" alt="Imagem exemplo" />
     </div>
-  
+  </div>
     <!-- CHATBOT -->
   
     <div class="ChatWrapper">
@@ -64,10 +64,9 @@ $nome = $stmt->fetchColumn() ?: "Usuário Desconhecido";
       </div>
   
       <div class="ChatIA">
-  <img src="https://static.vecteezy.com/system/resources/previews/007/225/199/non_2x/robot-chat-bot-concept-illustration-vector.jpg" alt="Abrir Chat Bot" class="bot-imagem" />
-</div>
+        <img src="https://static.vecteezy.com/system/resources/previews/007/225/199/non_2x/robot-chat-bot-concept-illustration-vector.jpg" alt="Abrir Chat Bot" class="bot-imagem" />
+      </div>
     </div>
-  </div>
 
     
     <script src="../../JS/FunçõesDoChatBot.js"></script>

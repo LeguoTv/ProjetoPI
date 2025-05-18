@@ -3,15 +3,25 @@ const expansao = document.querySelector(".chatExpandido");
 const chatWrapper = document.querySelector(".ChatWrapper");
 const chatIA = document.querySelector(".ChatIA");
 
+
+let mensagemBoasVindasEnviada = false;
 botao.addEventListener("click", () => {
   const estaAberto = expansao.style.height === "31rem";
   expansao.style.height = estaAberto ? "0" : "31rem";
   if (!estaAberto) {
     expansao.classList.add("aberto");
+
+    // Envia a mensagem de boas-vindas uma única vez
+    if (!mensagemBoasVindasEnviada) {
+      appendMessage("bot", "Olá! Sou o <b>BotAuctus</b>, seu assistente financeiro. Estou aqui para ajudar você a organizar suas finanças e alcançar seus objetivos. Vamos juntos?");
+      mensagemBoasVindasEnviada = true;
+    }
+
   } else {
     expansao.classList.remove("aberto");
   }
 });
+
 
 // Fechar o chat ao clicar fora do wrapper
 document.addEventListener("click", (e) => {
