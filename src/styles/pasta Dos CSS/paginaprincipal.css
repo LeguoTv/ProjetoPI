@@ -186,4 +186,10 @@ button[type="submit"] {
   font-weight: bold;
 }
 
+.erro-bot {
+  color: red;
+  font-style: italic;
+}
+
+
 /* expansividade */

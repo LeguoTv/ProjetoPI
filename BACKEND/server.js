@@ -33,36 +33,47 @@ const openai = new OpenAI({
     apiKey: process.env.OPENAI_API_KEY,
 });
 
-// Lê o prompt do arquivo
-const systemPrompt = fs.readFileSync("./backend/prompt.txt", "utf-8");
+// Lê o prompt do arquivo externo
+let systemPrompt = "";
+try {
+    systemPrompt = fs.readFileSync(path.join(__dirname, "prompt.txt"), "utf-8");
+    if (!systemPrompt.trim()) throw new Error("prompt.txt está vazio");
+} catch (err) {
+    console.error("❌ Erro ao ler o prompt.txt:", err.message);
+    process.exit(1);
+}
 
-// Objeto para armazenar o histórico das sessões
+// Histórico de chat por sessão
 const chatHistory = {};
 
 // Rota principal do chat
 app.post("/chat", async (req, res) => {
     const { message, sessionId = "default" } = req.body;
 
-    if (!message) {
-        return res.status(400).json({ error: "A mensagem não pode estar vazia" });
+    // Validação básica
+    if (!message || typeof message !== "string" || !message.trim()) {
+        return res.status(400).json({ error: "Mensagem inválida." });
     }
 
-    // Se ainda não tiver histórico dessa sessão, inicia um array
-    if (!chatHistory[sessionId]) {
-        chatHistory[sessionId] = [];
+    // Garante que o sessionId é string simples
+    const safeSessionId = String(sessionId).replace(/[^a-zA-Z0-9_-]/g, "");
+
+    // Inicializa histórico da sessão se necessário
+    if (!chatHistory[safeSessionId]) {
+        chatHistory[safeSessionId] = [];
     }
 
-    // Adiciona a mensagem do usuário ao histórico
-    chatHistory[sessionId].push({ role: "user", content: message });
+    // Adiciona a mensagem do usuário
+    chatHistory[safeSessionId].push({ role: "user", content: message });
 
-    console.log("🔹 Pergunta recebida:", message);
+    console.log(`🔹 [${safeSessionId}] Mensagem recebida:`, message);
 
     try {
         const response = await openai.chat.completions.create({
             model: "gpt-4o",
             messages: [
                 { role: "system", content: systemPrompt },
-                ...chatHistory[sessionId] // Envia o histórico completo (sem repetir o systemPrompt)
+                ...chatHistory[safeSessionId],
             ],
         });
 
@@ -70,20 +81,24 @@ app.post("/chat", async (req, res) => {
             throw new Error("Resposta vazia da API");
         }
 
-        const respostaBot = response.choices[0].message.content;
-        console.log("✅ Resposta da API:", respostaBot);
+        const botResponse = response.choices[0].message.content;
+        console.log(`✅ [${safeSessionId}] Resposta da API:`, botResponse);
 
-        // Adiciona a resposta do bot ao histórico
-        chatHistory[sessionId].push({ role: "assistant", content: respostaBot });
+        // Armazena a resposta do bot no histórico
+        chatHistory[safeSessionId].push({ role: "assistant", content: botResponse });
 
-        res.json({ response: respostaBot });
-    } catch (error) {
-        console.error("❌ Erro na API:", error);
-        res.status(500).json({ error: "Erro ao obter resposta da API" });
+        res.json({ response: botResponse });
+
+    } catch (err) {
+        console.error(`❌ [${safeSessionId}] Erro ao processar mensagem:`, err.message);
+        res.status(500).json({
+            error: "Erro ao obter resposta. Tente novamente mais tarde.",
+            response: "Desculpe, estou com dificuldades técnicas no momento. Tente novamente em breve!",
+        });
     }
 });
 
 // Inicia o servidor
 app.listen(port, () => {
-    console.log(`🚀 Assistente Financeiro rodando em http://localhost:${port}`);
+    console.log(`🚀 BotAuctus rodando em http://localhost:${port}`);
 });
