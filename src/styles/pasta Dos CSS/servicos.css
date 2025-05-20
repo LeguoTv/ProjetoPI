@@ -19,6 +19,24 @@ body {
   box-sizing: border-box;
   max-width: 100%;
 }
+/* Títulos e subtítulos */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Poppins", sans-serif;
+}
+
+/* Textos em geral */
+body,
+p,
+span,
+li,
+a {
+  font-family: "Questrial", sans-serif;
+}
 
 /*
 Dica extra:
@@ -90,7 +108,6 @@ header {
   text-align: center;
   color: white;
   margin-top: 2rem;
-  margin-bottom: 2rem;
 }
 
 main {
@@ -182,7 +199,6 @@ form .Mensagem .Social-links a:hover {
   justify-content: center;
   align-items: center;
   width: 100%;
-  margin-top: 1.5rem;
 }
 
 button {

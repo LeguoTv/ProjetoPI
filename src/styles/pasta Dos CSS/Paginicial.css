@@ -1,17 +1,3 @@
-@font-face {
-  font-family: "OpenSans";
-  src: url(../../assets/fonts/OpenSans-VariableFont_wdth\wght.ttf)
-    format("truetype");
-}
-@font-face {
-  font-family: "Atomic";
-  src: url(../../assets/fonts/aAtomicMd.otf) format("opentype");
-}
-@font-face {
-  font-family: "Berlinerins";
-  src: url(../../assets/fonts/TT\ Berlinerins\ Trial\ Grotesk.otf);
-}
-
 /* Impede qualquer rolagem horizontal no site */
 html,
 body {
@@ -27,6 +13,25 @@ body {
   max-width: 100%;
 }
 
+/* Títulos e subtítulos */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Poppins", sans-serif;
+}
+
+/* Textos em geral */
+body,
+p,
+span,
+li,
+a {
+  font-family: "Questrial", sans-serif;
+}
+
 /*
 Dica extra:
 Se você estiver usando margens negativas, width: 100vw,
@@ -40,13 +45,12 @@ Se você estiver usando margens negativas, width: 100vw,
   text-align: center;
   padding: 60px 20px;
   background-color: #fdfdfd;
-  font-family: "Poppins", sans-serif;
 }
 
 .hero-section h1 {
-  font-family: "OpenSans";
-  font-size: 4em; /* para almentar o tamanho da funte viunn!!!! do H1 */
-  font-weight: 900;
+  font-size: 3.6em; /* para almentar o tamanho da funte viunn!!!! do H1 */
+  font-weight: 700;
+
   color: #020021;
   margin-bottom: 25px;
 }
@@ -56,7 +60,6 @@ Se você estiver usando margens negativas, width: 100vw,
 }
 
 .hero-section p {
-  font-family: "OpenSans";
   font-size: 1.6em; /* para almentar o tamanho da fonte viunnn!!! do paragrafo! <p> */
   color: #020021;
   margin-bottom: 35px;
@@ -72,7 +75,7 @@ Se você estiver usando margens negativas, width: 100vw,
 .cta-buttonn a {
   display: inline-block;
   padding: 12px 28px;
-  font-family: "Berlinerins";
+
   font-size: 2em;
   color: white;
   background: linear-gradient(90deg, #0f1f61, #3ec6ff);
@@ -109,10 +112,8 @@ Se você estiver usando margens negativas, width: 100vw,
   text-align: center;
   padding: 60px 20px;
   background-color: #fdfdfd;
-  font-family: "Poppins", sans-serif;
 }
 .Paragrafo p {
-  font-family: "OpenSans";
   font-size: 2em; /* para almentar o tamanho da funte viunn!!!! do p */
   font-weight: 900;
   color: #020021;
@@ -130,7 +131,6 @@ Se você estiver usando margens negativas, width: 100vw,
   background-color: #fff;
   display: flex;
   justify-content: center;
-  font-family: "Segoe UI", sans-serif;
 }
 
 .info-container {
@@ -180,14 +180,12 @@ Se você estiver usando margens negativas, width: 100vw,
 }
 
 .text-box h2 {
-  font-family: "OpenSans";
   color: #001944;
   font-size: 40px; /* Aumentado */
   margin-bottom: 20px;
 }
 
 .text-box p {
-  font-family: "OpenSans";
   font-size: 20px; /* Aumentado */
   line-height: 1.7;
   margin-bottom: 12px;
@@ -207,7 +205,7 @@ Se você estiver usando margens negativas, width: 100vw,
   border-radius: 8px;
   color: #fff;
   text-decoration: none;
-  font-family: "Berlinerins";
+
   font-size: 16px;
 }
 
@@ -254,7 +252,7 @@ h1 span {
 }
 
 .feature-card h2 {
-  font-size: 1.9rem;
+  font-size: 1.5rem;
   margin: 0 0 5px;
   font-weight: 600;
 }
@@ -410,7 +408,7 @@ h1 span {
   .hero-section {
   }
   .hero-section h1 {
-    font-size: 35px;
+    font-size: 33px;
   }
   .hero-section p {
     font-size: 19px;

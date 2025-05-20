@@ -18,186 +18,23 @@ body {
   max-width: 100%;
 }
 
-header {
-  background: linear-gradient(to right, #0d1b2a, #0099ff);
-  padding: 30px 0;
-  color: white;
-  position: relative;
+/* Títulos e subtítulos */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Poppins", sans-serif;
 }
 
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr auto auto;
-  align-items: center;
-  gap: 20px;
-}
-
-.logo {
-  max-height: 50px;
-}
-.nav_links {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-}
-.nav-links ul {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  gap: 55px;
-  padding: 0;
-  margin: 0;
-}
-
-.nav-links a,
-.login a {
-  font-family: "Atomic";
-  text-decoration: none;
-  color: white;
-  font-weight: 500;
-  font-size: 1.4rem;
-  transition: color 0.3s;
-}
-
-.nav-links a:hover,
-.login a:hover {
-  color: #a0c4ff;
-}
-
-.login {
-  text-align: right;
-}
-
-.btn {
-  font-family: "Atomic";
-  font-size: 1.3rem;
-  padding: 10px 20px;
-  background-color: rgba(255, 255, 255, 0);
-  color: #ffffff;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-
-.btn:hover {
-  background-color: #dbeafe;
-}
-
-.main-content {
-  transition: transform 0.3s ease;
-}
-
-/* Quando o menu está aberto */
-.menu-ativo .main-content {
-  transform: translateY(140px); /* Empurra o conteúdo para baixo */
-  transition: transform 0.5s ease; /* Adiciona transição suave */
-}
-
-/* Estilo geral do botão hambúrguer */
-.hamburger {
-  display: none;
-  flex-direction: column;
-  justify-content: center;
-  gap: 6px;
-  cursor: pointer;
-  width: 35px;
-  height: 30px;
-  margin-right: 10px; /* espaço da borda */
-}
-
-.hamburger span {
-  display: block;
-  height: 4px;
-  background: white;
-  border-radius: 2px;
-  transition: all 0.3s ease;
-}
-
-@media (max-width: 435px) {
-  .container {
-    grid-template-columns: 1fr auto;
-    gap: 10px;
-    align-items: center;
-    position: relative;
-  }
-
-  .hamburger {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 6px;
-    cursor: pointer;
-    width: 35px;
-    height: 30px;
-    margin-right: 10px;
-  }
-
-  .hamburger span {
-    display: block;
-    height: 4px;
-    background: white;
-    border-radius: 2px;
-    transition: all 0.3s ease;
-  }
-
-  .nav-links,
-  .login {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    background: #0d1b2a;
-    z-index: 1000;
-    transition: all 0.3s ease;
-  }
-
-  /* Quando ativos */
-  .nav-links.active,
-  .login.active {
-    display: flex;
-  }
-
-  .nav-links ul {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    align-items: center;
-    padding: 20px 0;
-    margin: 0;
-    margin-top: 3.5rem;
-    list-style: none;
-  }
-
-  .nav-links a,
-  .login a {
-    text-align: center;
-    width: 100%;
-    font-size: 1.2rem;
-    padding: 10px 0;
-    color: white;
-    text-decoration: none;
-  }
-
-  .btn {
-    font-size: 1.1rem;
-    padding: 10px;
-    width: 100%;
-    background-color: rgba(255, 255, 255, 0.05);
-    border: 1px solid #ffffff33;
-    color: white;
-    border-radius: 5px;
-    margin-top: 10px;
-  }
-
-  .btn:hover {
-    background-color: #dbeafe;
-    color: #0d1b2a;
-  }
+/* Textos em geral */
+body,
+p,
+span,
+li,
+a {
+  font-family: "Questrial", sans-serif;
 }
 
 /*ABAIXO ESTA A ESTILIZAÇÃO DOS OUTROS CONTEÚDOS!*/
@@ -316,7 +153,7 @@ body.light-mode #link-projeto a:hover {
 
 /* ==================== Rodapé Ultra Moderno com Cores Oficiais ==================== */
 footer {
-  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+  background: linear-gradient(to right, #0d1b2a 0%, #1a3d5d 50%, #0099ff 100%);
   padding: 40px 20px 20px;
   color: #fff;
   font-family: "Poppins", sans-serif;
@@ -348,6 +185,9 @@ footer .social-icons a {
   font-size: 2rem;
   padding: 15px;
   border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  aspect-ratio: 1 / 1; /* Garante proporção perfeita de círculo */
   background: rgba(255, 255, 255, 0.05);
   border: 2px solid transparent;
   display: flex;
@@ -451,7 +291,7 @@ footer::after {
   right: -100px;
   background: radial-gradient(
     circle,
-    rgba(255, 0, 255, 0.3) 0%,
+    rgba(255, 0, 255, 0.5) 0%,
     transparent 70%
   );
   animation: moveGlow 8s linear infinite alternate-reverse;
