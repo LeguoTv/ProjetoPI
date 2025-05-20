@@ -1,61 +1,113 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Navbar Fixa</title>
-    <link rel="stylesheet" href="/projetopi/src/styles/pasta%20Dos%20CSS/nav.css">
-</head>
-<body>
+    <link
+      rel="stylesheet"
+      href="/projetopi/src/styles/pasta%20Dos%20CSS/nav.css"
+    />
+  </head>
+  <body>
     <nav id="main-navbar">
-        <div class="container">
-            <!-- Logo -->
-            <img src="/ProjetoPI/src/assets/Imagens%20do%20Site/Conteudo%20do%20site/Logo%20Branca.png" 
-                 alt="Logo" 
-                 class="logo" 
-                 loading="lazy">
+      <div class="container">
+        <!-- Logo -->
+        <img
+          src="/ProjetoPI/src/assets/Imagens%20do%20Site/Conteudo%20do%20site/Logo%20Branca.png"
+          alt="Logo"
+          class="logo"
+          loading="lazy"
+        />
 
-            <!-- Links Desktop -->
-            <div class="nav-links">
-                <!-- Links para NÃO LOGADOS -->
-                <ul class="guest-nav">
-                    <li><a href="/projetopi/public/paginicial.php" class="guest-link">Página Inicial</a></li>
-                    <li><a href="/projetopi/src/pages/pasta%20dos%20html/sobre.html" class="guest-link">Sobre</a></li>
-                    <li><a href="/projetopi/src/pages/pasta%20dos%20html/servicos.html" class="guest-link">Serviços</a></li>
-                    <li><a href="/projetopi/src/pages/cadastrar.php" class="guest-link" id="registrar-link">Registrar</a></li>
-                </ul>
+        <!-- Links Desktop -->
+        <div class="nav-links">
+          <!-- Links para NÃO LOGADOS -->
+          <ul class="guest-nav">
+            <li>
+              <a href="/projetopi/public/paginicial.php" class="guest-link"
+                >Página Inicial</a
+              >
+            </li>
+            <li>
+              <a
+                href="/projetopi/src/pages/pasta%20dos%20html/sobre.html"
+                class="guest-link"
+                >Sobre</a
+              >
+            </li>
+            <li>
+              <a
+                href="/projetopi/src/pages/pasta%20dos%20html/servicos.html"
+                class="guest-link"
+                >Suporte</a
+              >
+            </li>
+            <li>
+              <a
+                href="/projetopi/src/pages/cadastrar.php"
+                class="guest-link"
+                id="registrar-link"
+                >Registrar</a
+              >
+            </li>
+          </ul>
 
-                <!-- Links para LOGADOS -->
-                <ul class="logged-nav">
-                    <li><a href="/projetopi/src/pages/pasta%20dos%20html/paginaprincipal.php" class="logged-link" id="menu-principal-link">Menu Principal</a></li>
-                    <li><a href="/projetopi/src/pages/ver_gastos.php" class="logged-link">Histórico</a></li>
-                    <li><a href="/projetopi/src/pages/adicionar_gasto.php" class="logged-link">Novo Registro</a></li>
-                    <li><a href="/projetopi/src/pages/servicos.php" class="logged-link">Suporte</a></li>
-                </ul>
-            </div>
-
-            <!-- Botão Login/Logout -->
-            <div class="login">
-                <a href="/projetopi/src/pages/loginN.php" class="btn guest-link">Entrar</a>
-                <a href="/projetopi/src/pages/logout.php" class="btn logged-link">Sair</a>
-            </div>
-
-            <!-- Menu Mobile -->
-            <button class="hamburger" aria-label="Abrir menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+          <!-- Links para LOGADOS -->
+          <ul class="logged-nav">
+            <li>
+              <a
+                href="/projetopi/src/pages/pasta%20dos%20html/paginaprincipal.php"
+                class="logged-link"
+                id="menu-principal-link"
+                >Menu Principal</a
+              >
+            </li>
+            <li>
+              <a href="/projetopi/src/pages/ver_gastos.php" class="logged-link"
+                >Histórico</a
+              >
+            </li>
+            <li>
+              <a
+                href="/projetopi/src/pages/adicionar_gasto.php"
+                class="logged-link"
+                >Novo Registro</a
+              >
+            </li>
+            <li>
+              <a href="/projetopi/src/pages/servicos.php" class="logged-link"
+                >Suporte</a
+              >
+            </li>
+          </ul>
         </div>
 
-        <!-- Menu Mobile (Links) -->
-        <div class="mobile-menu">
-            <!-- Links serão clonados aqui -->
-            
-            <!-- Adicione esta div para os botões mobile -->
-            <div class="mobile-login">
-            </div>
+        <!-- Botão Login/Logout -->
+        <div class="login">
+          <a href="/projetopi/src/pages/loginN.php" class="btn guest-link"
+            >Entrar</a
+          >
+          <a href="/projetopi/src/pages/logout.php" class="btn logged-link"
+            >Sair</a
+          >
         </div>
+
+        <!-- Menu Mobile -->
+        <button class="hamburger" aria-label="Abrir menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+      <!-- Menu Mobile (Links) -->
+      <div class="mobile-menu">
+        <!-- Links serão clonados aqui -->
+
+        <!-- Adicione esta div para os botões mobile -->
+        <div class="mobile-login"></div>
+      </div>
     </nav>
-</body>
+  </body>
 </html>
