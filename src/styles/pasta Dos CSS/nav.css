@@ -5,7 +5,6 @@
 }
 
 body {
-  padding-top: 90px !important; /* Compensa a navbar fixa */
   position: relative;
 }
 
@@ -70,7 +69,7 @@ body:not(.logged-in) .guest-nav {
 .nav-links a {
   color: white;
   text-decoration: none;
-  font-family: "Atomic", sans-serif;
+  /* font-family: "Atomic", sans-serif; */
   font-size: 1.2rem;
   transition: all 0.3s;
   padding: 5px 0;
@@ -99,7 +98,7 @@ body:not(.logged-in) .guest-nav {
   color: white;
   background: transparent;
   cursor: pointer;
-  font-family: "Atomic", sans-serif;
+  /* font-family: "Atomic", sans-serif; */
   transition: all 0.3s ease;
 }
 
@@ -169,7 +168,7 @@ body:not(.logged-in) .guest-nav {
   padding: 18px 30px;
   color: #e0e0e0;
   text-decoration: none;
-  font-family: "Poppins", sans-serif;
+  /* font-family: "Poppins", sans-serif; */
   font-size: 1rem;
   letter-spacing: 0.5px;
   transition: all 0.3s ease;
@@ -244,7 +243,7 @@ body:not(.logged-in) .guest-nav {
   text-align: center;
   padding: 12px 16px;
   font-size: 1.1rem;
-  font-family: "Poppins", sans-serif;
+  /* font-family: "Poppins", sans-serif; */
   color: #fff;
   background: linear-gradient(135deg, #1f3b99, #4b6cb7);
   border: 2px solid #4b6cb7;
