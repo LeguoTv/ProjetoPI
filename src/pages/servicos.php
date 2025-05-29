@@ -53,15 +53,39 @@ if (!$usuario) {
 
     <form id="formEmail" action="enviar_mensagem.php" method="post">
       <div class="DadosPrincipais">
-        <label for="nome">Nome completo</label><br>
-        <input type="text" id="nome" name="nome" required value="<?php echo htmlspecialchars($usuario['nome']); ?>"><br>
-    
-        <label for="email">Email</label><br>
-        <input type="text" id="email" name="email" required value="<?php echo htmlspecialchars($usuario['email']); ?>"><br>
-    
-        <label for="tel">Telefone</label><br>
-        <input type="text" id="tel" name="telefone" required value="<?php echo htmlspecialchars($usuario['telefone']); ?>"><br>
-      </div>
+<label for="nome">Nome completo</label><br />
+<input 
+  type="text" 
+  id="nome" 
+  name="nome" 
+  minlength="1" 
+  required 
+  value="<?php echo htmlspecialchars($usuario['nome']); ?>" 
+/><br />
+
+<label for="email">Email</label><br />
+<input
+  type="email"
+  id="email"
+  name="email"
+  pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+  required
+  value="<?php echo htmlspecialchars($usuario['email']); ?>" 
+/><br />
+
+<label for="tel">Telefone</label><br />
+<input 
+  type="text" 
+  id="tel" 
+  name="telefone"        
+  pattern="\d{11}"
+  maxlength="11"
+  title="Digite 11 números sem espaços ou símbolos. Ex: 81988887777"
+  required 
+  value="<?php echo htmlspecialchars($usuario['telefone']); ?>" 
+/><br />
+</div>
+
     
       <div class="Mensagem">
         <label for="message">Envie sua mensagem</label><br>
@@ -73,12 +97,12 @@ if (!$usuario) {
           <a href="#"><i class="bi bi-tiktok"></i></a>
         </div>
       </div>
+      <div class="botao">
+        <button id="enviar" type="submit">Enviar</button>
+      </div>
     </form>
     
   
-    <div class="botao">
-      <button id="enviar" type="submit">Enviar</button>
-    </div>
 
   </main>
   
