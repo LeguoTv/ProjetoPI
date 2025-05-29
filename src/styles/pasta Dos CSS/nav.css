@@ -91,7 +91,7 @@ body:not(.logged-in) .guest-nav {
   gap: 15px;
 }
 
-.btn {
+.login .btn-login {
   padding: 8px 20px;
   border: 2px solid white;
   border-radius: 4px;
@@ -102,7 +102,7 @@ body:not(.logged-in) .guest-nav {
   transition: all 0.3s ease;
 }
 
-.btn:hover {
+.btn-login:hover {
   background: rgba(255, 255, 255, 0.1);
 }
 
@@ -230,14 +230,14 @@ body:not(.logged-in) .guest-nav {
   border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.mobile-menu .btn {
+.mobile-menu .btn-login {
   display: block;
   width: calc(100% - 50px);
   margin: 20px 25px 0;
   text-align: center;
 }
 
-.mobile-login .btn {
+.mobile-login .btn-login {
   position: relative;
   width: 100%;
   text-align: center;
@@ -255,7 +255,7 @@ body:not(.logged-in) .guest-nav {
   box-shadow: 0 0 10px rgba(75, 108, 183, 0.6);
 }
 
-.mobile-login .btn::before {
+.mobile-login .btn-login::before {
   content: "";
   position: absolute;
   top: -50%;
@@ -267,13 +267,13 @@ body:not(.logged-in) .guest-nav {
   z-index: -1;
 }
 
-.mobile-login .btn:hover {
+.mobile-login .btn-login:hover {
   transform: translateY(-3px) scale(1.02);
   box-shadow: 0 0 18px #4b6cb7, 0 0 8px #1f3b99;
   border-color: #ffffff;
 }
 
-.mobile-login .btn:active {
+.mobile-login .btn-login:active {
   transform: scale(0.98);
   box-shadow: 0 0 8px #1f3b99;
 }
