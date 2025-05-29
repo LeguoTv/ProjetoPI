@@ -92,9 +92,9 @@ if (!$usuario) {
         <textarea name="mensagem" maxlength="1000" required ></textarea>
     
         <div class="Social-links">
-          <a href="#"><i class="bi bi-youtube"></i></a>
-          <a href="#"><i class="bi bi-instagram"></i></a>
-          <a href="#"><i class="bi bi-tiktok"></i></a>
+          <a href="https://www.youtube.com/@ByAvanced"><i class="bi bi-youtube"></i></a>
+          <a href="https://www.instagram.com/byavanced/"><i class="bi bi-instagram"></i></a>
+          <a href="https://www.tiktok.com/@byavanced.startup?lang=pt-BR"><i class="bi bi-tiktok"></i></a>
         </div>
       </div>
       <div class="botao">
