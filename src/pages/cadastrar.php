@@ -55,11 +55,11 @@
         <label for="senha" class="labelInput">Senha</label>
       </div>
        <div class="inputBox">
-       <label for="data_nascimento"><b>Data de Nascimento:</b></label>
-       <input type="date" name="data_nascimento" class="inputUser"
-        placeholder="DD/MM/AAAA"
-        pattern="^(0[1-9]|[12][0-9]|3[01])/(0[1-9]|1[0-2])/([0-9]{4})$"
-        title="Digite no formato DD/MM/AAAA" required>
+        <label for="data_nascimento"><b>Data de Nascimento:</b></label>
+        <input type="date" name="data_nascimento" class="inputUser"
+          max="<?= date('Y-m-d') ?>" 
+          min="1900-01-01"
+          required>
        </div>
        <div class="inputBox">
        <input type="text" name="telefone" id="telefone" class="inputUser" 

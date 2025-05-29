@@ -17,7 +17,14 @@ if ($conn->connect_error) {
 
 // Obter informações do usuário
 $user_id = $_SESSION['usuario_id'];
-$nome = $_SESSION['usuario_nome'];
+
+$get_name = $conn->prepare("SELECT nome FROM usuarios WHERE id = ?");
+$get_name->bind_param("i", $user_id);
+$get_name->execute();
+$get_name_result = $get_name->get_result();
+$user_data = $get_name_result->fetch_assoc();
+$nome = $user_data ? $user_data['nome'] : "Usuário Desconhecido";
+
 
 // Verificar se o ID existe na tabela de usuários
 $check_user = $conn->prepare("SELECT id FROM usuarios WHERE id = ?");
@@ -81,6 +88,7 @@ exit();
 
 <span class="bem-vindo"><?php echo htmlspecialchars($nome); ?>, Este campo é destinado ao registro de suas informações.</span>
 
+
 <div class="form-page">
   <div class="form-wrapper">
     <form action="adicionar_gasto.php" method="post">
@@ -103,7 +111,8 @@ exit();
       <input type="text" step="0.01" name="Produto" id="Produto" required>
 
       <label for="data_gasto">Data do Gasto:</label>
-      <input type="date" name="data_gasto" id="data_gasto" required>
+      <input type="date" name="data_gasto" id="data_gasto" max="<?= date('Y-m-d') ?>" 
+         min="1900-01-01" required>
 
       <label for="preco">Preço do Produto:</label>
       <input type="number" step="0.01" name="preco" id="preco" required>
@@ -127,7 +136,7 @@ exit();
       </select>
 
       <label for="descricao">Descrição:</label>
-      <textarea name="descricao" id="descricao" rows="3" placeholder="Descrição do gasto"></textarea>
+      <textarea name="descricao" id="descricao" rows="3" maxlength="1000" placeholder="Descrição do gasto"></textarea>
 
       <input type="submit" value="Adicionar">
     </form>

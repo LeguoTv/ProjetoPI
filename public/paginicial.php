@@ -78,7 +78,7 @@ $conn->close();
         </p>
 
         <div class="cta-buttonn">
-            <a href="#">ASSINE JÁ</a>
+            <a href="../src/pages/cadastrar.php">ASSINE JÁ</a>
         </div>
     </div>
 
@@ -136,7 +136,7 @@ $conn->close();
                     Decisões mais rápidas, acompanha o <strong>desempenho</strong> e identifica 
                     <strong>oportunidades com agilidade</strong>.
                     </p>
-                    <a href="#" class="cta-button">ASSINE JÁ</a>
+                    <a href="../src/pages/cadastrar.php" class="cta-button">ASSINE JÁ</a>
                 </div>
         
             </div>

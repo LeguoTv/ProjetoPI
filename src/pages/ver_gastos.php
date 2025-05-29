@@ -6,7 +6,39 @@ if (!isset($_SESSION['usuario_id'])) {
 }
 
 $user_id = $_SESSION['usuario_id'];
-$nome = $_SESSION['usuario_nome'];
+// Conexão PDO (corrigida - antes de usar $pdo)
+try {
+    $pdo = new PDO("mysql:host=localhost;dbname=sistema_login", "root", "");
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch (PDOException $e) {
+    die("Erro na conexão com PDO: " . $e->getMessage());
+}
+
+// Atualiza o nome a partir do banco de dados
+$stmt = $pdo->prepare("SELECT nome FROM usuarios WHERE id = ?");
+$stmt->execute([$user_id]);
+$usuario = $stmt->fetch(PDO::FETCH_ASSOC);
+
+if ($usuario) {
+    $nome = $usuario['nome'];
+    $_SESSION['usuario_nome'] = $nome; // Atualiza a sessão com o novo nome
+} else {
+    $nome = "Usuário";
+}
+
+
+// Atualiza o nome a partir do banco de dados
+$stmt = $pdo->prepare("SELECT nome FROM usuarios WHERE id = ?");
+$stmt->execute([$user_id]);
+$usuario = $stmt->fetch(PDO::FETCH_ASSOC);
+
+if ($usuario) {
+    $nome = $usuario['nome'];
+    $_SESSION['usuario_nome'] = $nome; // Atualiza a sessão com o novo nome
+} else {
+    $nome = "Usuário"; // Nome padrão caso não encontre
+}
+
 
 // Conexão PDO (corrigida - antes de usar $pdo)
 try {
