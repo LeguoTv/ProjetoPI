@@ -23,6 +23,24 @@ body {
   gap: 20px;
 }
 
+/* Títulos e subtítulos */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Poppins", sans-serif;
+}
+
+/* Textos em geral */
+body,
+p,
+span,
+li,
+a {
+  font-family: "Questrial", sans-serif;
+}
 
 /* Estilização do container */
 /* Ajuste geral para o container principal */

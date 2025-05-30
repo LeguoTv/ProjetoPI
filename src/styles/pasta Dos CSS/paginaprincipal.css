@@ -144,7 +144,8 @@ o código todo começando do BODY, e ja são 00:35 e eu to morto de fome */
   border-radius: 20px;
   max-width: 80%;
   word-wrap: break-word;
-  font-size: 0.9rem;
+  font-size: 1.05rem;
+  font-family: "Questrial", sans-serif;
 }
 
 .user {
@@ -174,6 +175,7 @@ input[type="text"] {
   padding: 1rem;
   font-size: 1rem;
   outline: none;
+  
 }
 
 button[type="submit"] {
