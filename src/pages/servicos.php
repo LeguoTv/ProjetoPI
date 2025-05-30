@@ -89,7 +89,9 @@ if (!$usuario) {
     
       <div class="Mensagem">
         <label for="message">Envie sua mensagem</label><br>
-        <textarea name="mensagem" maxlength="1000" required ></textarea>
+        <textarea name="mensagem" 
+        minlength="1" 
+        maxlength="1000" required ></textarea>
     
         <div class="Social-links">
           <a href="https://www.youtube.com/@ByAvanced"><i class="bi bi-youtube"></i></a>
