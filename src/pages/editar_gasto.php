@@ -112,17 +112,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <span class="icone-voltar">&#8592;</span> Voltar
     </a>
 <hr>
-    <label for="Produto">Nome do Produto:</label>
+    <label for="Produto">Descrição do Gasto:</label>
     <input type="text" step="0.01" name="Produto" id="Produto" value="<?php echo htmlspecialchars($Produto['Produto']); ?>" required>
 
-    <label for="data_gasto">Data do Gasto:</label>
+    <label for="data_gasto">Data da Despesa:</label>
     <input type="date" name="data_gasto" id="data_gasto" value="<?php echo htmlspecialchars($Produto['data_gasto']); ?>" required>
 
-    <label for="preco">Preço:</label>
+    <label for="preco">Valor da Despesa:</label>
     <input type="number" step="0.01" name="preco" id="preco" value="<?php echo htmlspecialchars($Produto['preco']); ?>" required>
 
     <div class="select-group">
-    <label for="categoria">Categoria:</label>
+    <label for="categoria">Categoria da Despesa:</label>
     <select name="categoria" id="categoria" required>
         <option value="Alimentação" <?php echo $Produto['categoria'] === 'Alimentação' ? 'selected' : ''; ?>>Alimentação</option>
         <option value="Transporte" <?php echo $Produto['categoria'] === 'Transporte' ? 'selected' : ''; ?>>Transporte</option>
@@ -134,7 +134,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </div>
 
 <div class="select-group">
-    <label for="tipo">Tipo:</label>
+    <label for="tipo">Tipo de Transação:</label>
     <select name="tipo" id="tipo" required>
         <option value="lucro" <?php echo $Produto['Tipo'] === 'lucro' ? 'selected' : ''; ?>>Lucro</option>
         <option value="divida" <?php echo $Produto['Tipo'] === 'divida' ? 'selected' : ''; ?>>Dívida</option>
@@ -142,7 +142,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </div>
 
 <br><br>
-    <label for="descricao">Descrição:</label>
+    <label for="descricao">Observações:</label>
     <textarea name="descricao" id="descricao" rows="3"><?php echo htmlspecialchars($Produto['descricao']); ?></textarea>
 
     <input type="submit" value="Atualizar Gasto">

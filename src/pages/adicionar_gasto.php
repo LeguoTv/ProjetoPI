@@ -107,17 +107,17 @@ exit();
   ?>
 </div>
 
-      <label for="gasto">Nome do Produto:</label>
+      <label for="gasto">Descrição do Gasto:</label>
       <input type="text" step="0.01" name="Produto" id="Produto" required>
 
-      <label for="data_gasto">Data do Gasto:</label>
+      <label for="data_gasto">Data da Despesa:</label>
       <input type="date" name="data_gasto" id="data_gasto" max="<?= date('Y-m-d') ?>" 
          min="1900-01-01" required>
 
-      <label for="preco">Preço do Produto:</label>
+      <label for="preco">Valor da Despesa:</label>
       <input type="number" step="0.01" name="preco" id="preco" required>
 
-      <label for="categoria">Categoria:</label>
+      <label for="categoria">Categoria da Despesa:</label>
       <select name="categoria" id="categoria" required>
         <option value=""></option>
         <option value="Alimentação">Alimentação</option>
@@ -128,14 +128,14 @@ exit();
         <option value="Outros">Outros</option>
       </select>
 
-      <label for="tipo">Tipo:</label>
+      <label for="tipo">Tipo de Transação:</label>
       <select name="tipo" id="tipo" required>
         <option value=""></option>
         <option value="lucro">Lucro</option>
         <option value="divida">Dívida</option>
       </select>
 
-      <label for="descricao">Descrição:</label>
+      <label for="descricao">Observações:</label>
       <textarea name="descricao" id="descricao" rows="3" maxlength="1000" placeholder="Descrição do gasto"></textarea>
 
       <input type="submit" value="Adicionar">
