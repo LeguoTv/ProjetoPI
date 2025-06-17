@@ -150,7 +150,7 @@ function updateMessage(messageId, newText, isError = false, rawHTML = false) {
  */
 function formatMessage(text) {
   // Escapa caracteres HTML perigosos
-  let safe = text
+  let safe = text 
     .replace(/&/g, "&amp;")
     .replace(/</g, "&lt;")
     .replace(/>/g, "&gt;");
