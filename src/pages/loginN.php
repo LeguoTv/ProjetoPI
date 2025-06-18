@@ -8,12 +8,22 @@
   </head>
   <body>
   <div class="login-container">
+<<<<<<< HEAD
     <a href="../../public/paginicial.php">
       <img src="/ProjetoPI/src/assets/Imagens%20do%20Site/Conteudo%20do%20site/Logo%20Branca.png" 
             alt="Logo" 
             class="logo" 
             loading="lazy">
     </a>       
+=======
+      <a href="\ProjetoPI\public\paginicial.php">
+        <img src="/ProjetoPI/src/assets/Imagens%20do%20Site/Conteudo%20do%20site/Logo%20Branca.png" 
+        alt="Logo" 
+        class="logo" 
+        loading="lazy">
+      </a>
+
+>>>>>>> c1a7d4451d2a2dc72e89674946ea08ac80eb952c
       <h2 class="slogan">
         O FUTURO DA SUA LIBERDADE <br /><span>FINANCEIRA</span>
       </h2>

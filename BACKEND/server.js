@@ -1,12 +1,12 @@
 // Importação dos módulos necessários
-import express from "express";
-import cors from "cors";
-import bodyParser from "body-parser";
-import { OpenAI } from "openai/index.mjs";
-import dotenv from "dotenv";
-import path from "path";
-import { fileURLToPath } from "url";
-import fs from "fs";
+import express from "express"; // servidor web
+import cors from "cors"; // permite requisições de outros domínios
+import bodyParser from "body-parser"; // interpreta JSON no corpo da requisição
+import { OpenAI } from "openai/index.mjs"; // conecta com a API da OpenAI
+import dotenv from "dotenv"; // carrega variáveis do arquivo .env
+import path from "path"; // manipula caminhos de arquivos
+import { fileURLToPath } from "url"; // converte URL de módulo para caminho real
+import fs from "fs"; // permite ler/escrever arquivos
 
 // Para usar __dirname com ESModules
 const __filename = fileURLToPath(import.meta.url);
@@ -87,7 +87,7 @@ app.post("/chat", async (req, res) => {
         // Armazena a resposta do bot no histórico
         chatHistory[safeSessionId].push({ role: "assistant", content: botResponse });
 
-        res.json({ response: botResponse });
+        res.json({ response: botResponse }); // responde o frontend com o texto gerado, mó firmeza
 
     } catch (err) {
         console.error(`❌ [${safeSessionId}] Erro ao processar mensagem:`, err.message);
