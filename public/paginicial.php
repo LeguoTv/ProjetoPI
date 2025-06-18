@@ -85,7 +85,7 @@ $conn->close();
     <!-- agora vem a imagem deacordo com o pdf -->
     <!-- Imagem centralizada abaixo do conteúdo -->
   <div class="dashboard-image">
-    <img src="../src/assets/Imagens do Site/print do ver os gastos.png" alt="Dashboard Financeiro" />
+    <img src="../src/assets/Imagens do Site/historico dos registro cadastrados 2.png" alt="Dashboard Financeiro" />
   </div>
 
     <div class="Paragrafo">
@@ -125,7 +125,7 @@ $conn->close();
             <div class="info-box reverse">
                 <div class="image-box">
                     <!--tamanho da imagem 510 x 420 fica perfeita-->
-                    <img src="../src/assets/Imagens do Site/print dos graficor .png" alt="Dashboard Gráfico">
+                    <img src="../src/assets/Imagens do Site/graficos interativos 2.png" alt="Dashboard Gráfico">
                 </div>
         
                 <div class="text-box">
@@ -180,7 +180,7 @@ $conn->close();
     <div class="image-boxx">
         <div class="image-contentt">
             <!-- Substitua o src com o caminho da sua imagem -->
-            <img src="../src/assets/Imagens do Site/Captura de tela 2025-04-15 094053.png" alt="Imagem do sistema">
+            <img src="../src/assets/Imagens do Site/registro de produtos 3.png" alt="Imagem do sistema">
         </div>
     </div>
 </div>
