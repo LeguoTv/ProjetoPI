@@ -9,7 +9,7 @@ form.addEventListener("submit", function (e) {
     .sendForm("service_gvw5cpn", "template_yls7rno", this)
     .then(
       function (response) {
-        alert("Email enviado com sucesso! 🎉");
+        alert("Email enviado com sucesso!");
         form.reset();
       },
       function (error) {

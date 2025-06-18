@@ -51,40 +51,41 @@ if (!$usuario) {
   </div>
   <main>
 
-    <form id="formEmail" action="enviar_mensagem.php" method="post">
-      <div class="DadosPrincipais">
-<label for="nome">Nome completo</label><br />
-<input 
-  type="text" 
-  id="nome" 
-  name="nome" 
-  minlength="1" 
-  required 
-  value="<?php echo htmlspecialchars($usuario['nome']); ?>" 
-/><br />
+  <form id="formEmail" action="enviar_mensagem.php" method="post">
+    <div class="DadosPrincipais">
+      
+      <label for="nome">Nome completo</label><br />
+      <input 
+        type="text" 
+        id="nome" 
+        name="nome" 
+        minlength="1" 
+        required 
+        value="<?php echo htmlspecialchars($usuario['nome']); ?>" 
+      /><br />
 
-<label for="email">Email</label><br />
-<input
-  type="email"
-  id="email"
-  name="email"
-  pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
-  required
-  value="<?php echo htmlspecialchars($usuario['email']); ?>" 
-/><br />
+      <label for="email">Email</label><br />
+      <input
+        type="email"
+        id="email"
+        name="email"
+        pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+        required
+        value="<?php echo htmlspecialchars($usuario['email']); ?>" 
+      /><br />
 
-<label for="tel">Telefone</label><br />
-<input 
-  type="text" 
-  id="tel" 
-  name="telefone"        
-  pattern="\d{11}"
-  maxlength="11"
-  title="Digite 11 números sem espaços ou símbolos. Ex: 81988887777"
-  required 
-  value="<?php echo htmlspecialchars($usuario['telefone']); ?>" 
-/><br />
-</div>
+      <label for="tel">Telefone</label><br />
+      <input 
+        type="text" 
+        id="tel" 
+        name="telefone"        
+        pattern="\d{11}"
+        maxlength="11"
+        title="Digite 11 números sem espaços ou símbolos. Ex: 81988887777"
+        required 
+        value="<?php echo htmlspecialchars($usuario['telefone']); ?>" 
+      /><br />
+      </div>
 
     
       <div class="Mensagem">
